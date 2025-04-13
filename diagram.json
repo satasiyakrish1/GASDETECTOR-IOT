@@ -1,0 +1,51 @@
+{
+    "version": 1,
+    "author": "Krish Satasiya",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+      { "type": "wokwi-lcd1602", "id": "lcd", "top": -178.97, "left": 16, "attrs": {} },
+      { "type": "wokwi-gas-sensor", "id": "gas", "top": -141.3, "left": 362.2, "attrs": {} },
+      {
+        "type": "wokwi-led",
+        "id": "ledred",
+        "top": -70.8,
+        "left": 359,
+        "attrs": { "color": "red" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "ledgreen",
+        "top": -61.2,
+        "left": 387.8,
+        "attrs": { "color": "green" }
+      },
+      { "type": "wokwi-buzzer", "id": "buzzer", "top": -64.8, "left": 424.2, "attrs": {} },
+      { "type": "wokwi-dc-motor", "id": "fan", "top": 170, "left": 40, "attrs": {} }
+    ],
+    "connections": [
+      [ "lcd:RS", "uno:12", "green", [] ],
+      [ "lcd:E", "uno:11", "green", [] ],
+      [ "lcd:D4", "uno:10", "green", [] ],
+      [ "lcd:D5", "uno:9", "green", [] ],
+      [ "lcd:D6", "uno:8", "green", [] ],
+      [ "lcd:D7", "uno:7", "green", [] ],
+      [ "lcd:VSS", "uno:GND", "black", [] ],
+      [ "lcd:VDD", "uno:5V", "red", [] ],
+      [ "lcd:RW", "uno:GND", "black", [] ],
+      [ "lcd:A", "uno:5V", "red", [] ],
+      [ "lcd:K", "uno:GND", "black", [] ],
+      [ "gas:AO", "uno:A0", "blue", [] ],
+      [ "gas:VCC", "uno:5V", "red", [ "v306.3", "h-339.2" ] ],
+      [ "gas:GND", "uno:GND", "black", [] ],
+      [ "ledred:A", "uno:4", "red", [] ],
+      [ "ledred:C", "uno:GND", "black", [] ],
+      [ "ledgreen:A", "uno:3", "green", [] ],
+      [ "ledgreen:C", "uno:GND", "black", [] ],
+      [ "buzzer:1", "uno:2", "blue", [ "v96", "h-163.2", "v-106.2" ] ],
+      [ "buzzer:2", "uno:GND", "black", [] ],
+      [ "fan:1", "uno:5", "orange", [] ],
+      [ "fan:2", "uno:GND", "black", [] ]
+    ],
+    "dependencies": {}
+  }
